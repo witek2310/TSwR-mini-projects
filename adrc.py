@@ -19,10 +19,10 @@ traj_gen = Sinusoidal(np.array([0., 1.]), np.array([2., 2.]), np.array([0., 0.])
 
 b_est_1 = 1
 b_est_2 = 4
-kp_est_1 = 20
-kp_est_2 = 10
-kd_est_1 = 39
-kd_est_2 = 12
+kp_est_1 = 7
+kp_est_2 = 12
+kd_est_1 = 3
+kd_est_2 = 5
 p1 = 100
 p2 = 100
 
