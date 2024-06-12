@@ -40,7 +40,6 @@ class MMAController(Controller):
         q = np.array([x[:2]]).reshape((2,1))
         q_dot = np.array([x[2:]]).reshape((2,1))
         v = np.array([q_r_ddot]).reshape((2,1)) + self.Kd * (np.array([q_r_dot]).reshape((2,1)) - q_dot) + self.Kp * ( np.array([q_r]).reshape(2,1) - q) # TODO: add feedback
-        print(self.i)
         M = self.models[self.i].M(x)
         C = self.models[self.i].C(x)
         u = M @ v+ C @ q_dot

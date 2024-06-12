@@ -33,8 +33,10 @@ class ADRCJointController(Controller):
         m = M[i,i]
         self.set_b(1/m)
         self.eso.update([x[0]], [self.prev_u])
-        q_hat, q_dot_hat, f = self.eso.get_state()
-        
+        state = self.eso.get_state()
+        q_hat = state[0,0]
+        q_dot_hat = state[1,0]
+        f = state[2,0]
 
 
         u_pd = self.loc_control.calculate_control(x[0], q_dot_hat, q_d,q_d_dot, q_d_ddot)
